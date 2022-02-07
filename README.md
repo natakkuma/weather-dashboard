@@ -33,7 +33,7 @@ THEN I am again presented with current and future conditions for that city
 https://natakkuma.github.io/weather-dashboard/
 
 <h2>Screenshot</h2>
-<img src="https://user-images.githubusercontent.com/95733427/151715838-b12e9a37-861d-4567-9c33-2ef6815ec391.png"/>
+<img src="https://user-images.githubusercontent.com/95733427/152857039-ddadfbec-ac9d-4624-803d-13fafe51149f.png"/>
 
 
 <h2>Contribution</h2>
