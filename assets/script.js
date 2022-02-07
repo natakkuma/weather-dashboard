@@ -81,8 +81,7 @@
 
             //View City Name & Clear Old Info
             currentContent.textContent = " ";
-            var city = document.querySelector("#city");
-            cityName.textContent = city;
+            cityName.textContent = $("#city").val().trim();
 
             //View the Date
             var today = document.createElement("span");
@@ -191,7 +190,7 @@
                     console.log(data);
                 });
             });
-        }
+        };
 
         //function forecastInfo - 5 day weather forcast display
         var forecastInfo = function(weather) {
@@ -248,12 +247,7 @@
 
         }
 
-            
-
-
-
-    
-
-    //Show Present and Future Weather conditions when City is Selected from Search History
+    //4. Search History Selection
+        //Show Present and Future Weather conditions when City is Selected from Search History
 
 
