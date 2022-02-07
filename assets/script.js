@@ -17,6 +17,7 @@
 
     //Search History
     var searchedCities = [];
+    var previousCityBtn = document.querySelector("#search-list")
 
 
 
@@ -38,7 +39,7 @@
             if (!searchedCities.includes(city)) {
                 searchedCities.push(city);
 
-                var searchedCity = $(`<li class="searched-list">${city}</li>`);
+                var searchedCity = $(`${city}`);
 
                 $("#searched-cities").append(searchedCity);
             };
@@ -46,6 +47,10 @@
             //Locally Store City Search
             localStorage.setItem("city", JSON.stringify(searchedCities));
             console.log(searchedCities);
+
+            //Previous City
+            previousCity(city);
+
 
         });
 
@@ -82,6 +87,7 @@
             //View City Name & Clear Old Info
             currentContent.textContent = " ";
             cityName.textContent = $("#city").val().trim();
+            //cityName.textContent = $("#city").val().trim();
 
             //View the Date
             var today = document.createElement("span");
@@ -117,7 +123,7 @@
             var long = weather.coord.lon;
             lookupUV(lat,long);
             
-        }
+        };
 
         // function lookupUV - Get API Data for UV Index Check
         var lookupUV = function (lat, long) {
@@ -168,7 +174,7 @@
             //Append to Current Conditions Section
             currentContent.appendChild(uvIndex);
 
-        }
+        };
 
 
     //3. Future Weather Conditions
@@ -245,9 +251,43 @@
 
                 };
 
+        };
+
+    //4. Search History Selection 
+
+        //function previousCity - button selection
+        var previousCity = function(previousCity){
+
+            console.log(previousCity);
+
+            selectCity = document.createElement("button");
+            selectCity.textContent = previousCity;
+            selectCity.classList = "d-flex w-100 btn-light p-2";
+            selectCity.setAttribute("data-city", previousCity);
+            selectCity.setAttribute("type", "submit");
+
+            previousCityBtn.prepend(selectCity);
+
         }
 
-    //4. Search History Selection
-        //Show Present and Future Weather conditions when City is Selected from Search History
+        //function searchPrevious - Show Present and Future Weather conditions when City is Selected from Search History
+        var searchPrevious = function(event){
+
+
+           var city = event.target.getAttribute("data-city")
+
+           currentContent.textContent = " ";
+           cityName.textContent = city;
+           
+           if (city) {
+               currentWeather(city);
+               fiveDay(city);  
+           }
+        }
+
+        //eventListener
+        previousCityBtn.addEventListener("click", searchPrevious);
+            
+       
 
 
