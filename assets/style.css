@@ -6,5 +6,27 @@ h1 {
     font-weight: 400;
     letter-spacing: 3px;
     text-align: center;
-    padding: 5px;
+    padding: 30px;
+}
+
+/*UV Index - Color*/
+/*Favorable - Green*/
+.favorable {
+    color: black;
+    background-color: green;
+    padding: 6px;
+}
+
+/*Severe - Red*/
+.severe {
+    color: black;
+    background-color: red;
+    padding: 6px;
+}
+
+/*Moderate - Yellow*/
+.moderate {
+    color: black;
+    background-color: yellow;
+    padding: 6px;
 }
