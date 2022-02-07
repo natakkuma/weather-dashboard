@@ -19,7 +19,7 @@
 
 <body>
     <!--Header-->
-    <header class="row navbar navbar-dark bg-dark text-white text-center">
+    <header class="row navbar bg-dark text-white text-center">
         <h1>Weather Dashboard</h1>
     </header>
 
@@ -53,10 +53,10 @@
 
                 <div class="col-12">
                     <!--City Name-->
-                    <h2 id="city-name">City Name</h2>
+                    <h2 id="city-name"></h2>
 
                     <!--Current Weather Info-->
-                    <div id="current-content" class="current"></div>
+                    <div id="current-content" class="list-group"></div>
                 </div>
 
             </div>
@@ -65,7 +65,7 @@
             <div class="row future" id="five-day">
 
                 <div class="col-12">
-                    <h2 id="forecast">5 Day Forecast</h2>
+                    <h2 id="forecast"></h2>
                     <div class="week" id="fiveday-container"></div> 
                 </div>
             </div>
@@ -77,7 +77,7 @@
 
     </main>
     
-    <!--jQuery & jMoment-->
+    <!--Script for jQuery & jMoment-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     

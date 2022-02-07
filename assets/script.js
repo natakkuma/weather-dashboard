@@ -1,11 +1,11 @@
 //VARIABLES
 
-    
-
+    //API Key
+    var apiKey = "a49571aaab6c39d649d6563704a37042";
     
     //City Search
     var citySearch = document.querySelector("#search-city");
-    var city = document.querySelector("#city");
+    
     
     //Current Forecast
     var currentContent = document.querySelector("#current-content");
@@ -88,16 +88,38 @@
 
         //View City Name
 
-        //View the Date 
+
+        //View the Date
+        var today = document.createElement("span");
+        today.textContent= "Today:" + moment(weather.dt.value).format("MMM D, YYYY");
+        cityName.appendChild(today);
 
         //View Icon of Weather Condition
+        var weatherCondition = document.createElement("img");
+        weatherCondition.setAttribute("src",`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+        cityName.appendChild(weatherCondition);
 
-        //View Icon of Temperature
 
-        //View Icon of Humidity
+        //View Temperature Info
+        var temperatureInfo = document.createElement("span");
+        temperatureInfo.textContent = "Temperature: " + weather.main.temp + " °F";
+        temperatureInfo.classList = "list-group-item";
+        currentContent.appendChild(temperatureInfo);
 
-        //View Icon of Wind Speed
-         
+        //View Humidity Info
+        var humidityInfo = document.createElement("span");
+        humidityInfo.textContent = "Humidity: " + weather.main.humidity + " %";
+        humidityInfo.classList = "list-group-item";
+        currentContent.appendChild(humidityInfo);
+
+        //View Wind Speed Info
+        var windSpeed = document.createElement("span");
+        windSpeed.textContent = "Wind Speed: " + weather.wind.speed + " mph";
+        windSpeed.classList = "list-group-item";
+        currentContent.appendChild(windSpeed);
+
+        //Clear Info
+        
     }
 
     
