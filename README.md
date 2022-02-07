@@ -1,11 +1,14 @@
-# weather-dashboard
+<h1>Multi-City Weather Dashboard</h1>
 
-USER STORY
+<h2>Purpose</h2>
+A weather dashboard that allows you to view current weather conditions and the 5 day forecast of a city. Previously searched cities are stored locally and can be accessed again. 
+
+<h3>User Story: </h3>
 AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 
-ACCEPTANCE CRITERIA
+<h3>Acceptance Criteria: </h3>
 GIVEN a weather dashboard with form inputs
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
@@ -17,3 +20,23 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
+<h2>Built With</h2>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li><a href="https://openweathermap.org/api">Open Weather API</a></li>
+</ul>
+  
+<h2>Website</h2>
+https://natakkuma.github.io/weather-dashboard/
+
+<h2>Screenshot</h2>
+<img src="https://user-images.githubusercontent.com/95733427/151715838-b12e9a37-861d-4567-9c33-2ef6815ec391.png"/>
+
+
+<h2>Contribution</h2>
+Made with ❤️ by Natakkuma
+
+
