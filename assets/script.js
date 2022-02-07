@@ -87,8 +87,7 @@
             //View City Name & Clear Old Info
             currentContent.textContent = " ";
             cityName.textContent = $("#city").val().trim();
-            //cityName.textContent = $("#city").val().trim();
-
+            
             //View the Date
             var today = document.createElement("span");
             today.textContent= "  -  " + moment(weather.dt.value).format("MMM D, YYYY");
