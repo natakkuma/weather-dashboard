@@ -1,13 +1,22 @@
 //VARIABLES
 
-    //API
-    var apiKey = "a49571aaab6c39d649d6563704a37042";
-
-    //Dates - Current Forecast
     
+
+    
+    //City Search
+    var citySearch = document.querySelector("#search-city");
+    var city = document.querySelector("#city");
+    
+    //Current Forecast
+    var currentContent = document.querySelector("#current-content");
+    var cityName = document.querySelector("#city-name");
+
     //Future Forecast
+    var futureForecast = document.querySelector("#forecast");
+    var futureContent = document.querySelector("#fiveday-container");
 
     //Search History
+    var searchedCities = [];
 
 
 
@@ -25,36 +34,74 @@
         currentWeather(city);
 
         //Check if City Input is in Search History
+        if (!searchedCities.includes(city)) {
+            searchedCities.push(city);
+
+            var searchedCity = $(`<li class="searched-list">${city}</li>`);
+
+            $("#searched-cities").append(searchedCity);
+        };
 
         //Locally Store City Search
+        localStorage.setItem("city", JSON.stringify(searchedCities));
+        console.log(searchedCities);
 
-    })
+    });
 
 
 
 
     //function currentWeather - Present with Curent Weather Conditions
     function currentWeather(city) {
+        //API Key
+        var apiKey = "a49571aaab6c39d649d6563704a37042"
 
         //API Query URL
-        var queryURL = `https://openweathermap.org/current#:~:text=api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
-
+        var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+        
+        //option 1 - AJAX XML data transfer
+        //$.ajax({
+           //url: queryURL,
+           //method: "GET" 
+        //}).then
+       
+       //option 2 - jSON text data transfer
         fetch(queryURL)
-        .then(function(response) {
+        //.then(function (response) {
+            //return response.json();
+       // })
+        //.then(function (data)
+        .then(function(response) 
+        {
+            
             response.json().then(function(data){
+
+                currentDisplay (data,city);
 
             });
         });
     };
 
-        //View Current Weather Conditions 
+    //function currentDisplay - View Current Weather Conditions 
+    var currentDisplay = function(weather, searchCity){
+        console.log(weather);
+
         //View City Name
+
         //View the Date 
+
         //View Icon of Weather Condition
+
         //View Icon of Temperature
+
         //View Icon of Humidity
+
         //View Icon of Wind Speed
-        //View UV Index 
+         
+    }
+
+    
+    //View UV Index 
 
     // When UV Index is viewed - Shows Color that indicates whether conditions are favorable, moderate, or severe
 
